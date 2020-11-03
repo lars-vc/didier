@@ -8,6 +8,7 @@ files/stats.json
 files/lost.json
 files/locked.json
 files/database.json
+files/commands.json
 .idea/
 __pycache__
 .env
