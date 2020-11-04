@@ -3,6 +3,7 @@ import datetime
 import discord
 from discord.ext import commands
 from functions import checks, easterEggResponses
+from functions import commands as command_stats
 from functions.database import stats, muttn
 import pytz
 import time
@@ -89,6 +90,7 @@ class Events(commands.Cog):
         print("{} in {}: {}".format(ctx.author.display_name,
                                     "DM" if DM else "{} ({})".format(ctx.channel.name, ctx.guild.name),
                                     ctx.message.content))
+        command_stats.updateFile(ctx)
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, err):
